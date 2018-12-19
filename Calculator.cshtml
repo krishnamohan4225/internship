@@ -10,10 +10,10 @@
 
     <div class="row">
         <div class="col-sm-3">
-            <input type="text" value="@ViewBag.num1" name="num1"/>
+            <input type="text" value="@ViewBag.num1" name="num1" class="form-control"/>
     </div>
         <div class="col-sm-3">
-            <input type="text" value="@ViewBag.num2" name="num2" />
+            <input type="text" value="@ViewBag.num2" name="num2" class="form-control" />
         </div>
         <div class="col-sm-3">
             <input type="submit" name="command" value="add" class="btn btn-primary" />
@@ -22,7 +22,7 @@
             <input type="submit" name="command" value="div" class="btn btn-primary" />
         </div>
         <div class="col-sm-3">
-            <label>@ViewBag.result</label>
+            <label>Result is : @ViewBag.result</label>
         </div>
     </div>
    
