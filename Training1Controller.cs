@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Training_2.Models;
 namespace Training_2.Controllers
 {
     public class Training1Controller : Controller
@@ -36,6 +36,19 @@ namespace Training_2.Controllers
             return View("Index");
         }
 
+
+        [HttpPost]
+        public ActionResult postdata_usingStornglyTypedModel()
+        {
+
+            Student s = new Student();
+            s.name = Request["myname"];
+            s.city = Request["mycity"];
+            
+            ViewBag.myname = s.name;
+            ViewBag.mycity = s.city;
+            return View("Index");
+        }
 
     }
 }
