@@ -1,27 +1,56 @@
-﻿using BiharITI.DATA;
 using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
-namespace BiharITI.Controllers
+namespace calc.Controllers
 {
-    public class HomeController : Controller
+    public class CalculatorController : Controller
     {
-        
-        [HttpGet]
-        public ActionResult Calculator()
+        // GET: Calculator
+        public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Calculator(int? num1, int? num2)
+        public ActionResult Index(int num1, int num2, string command)
         {
-            int? sum = num1 + num2;
-            ViewBag.num1 = num1;
-            ViewBag.num2 = num2;
-            ViewBag.sum = sum;
+            if (command == "add")
+            {
+                int result = num1 + num2;
+                ViewBag.num1 = num1;
+                ViewBag.num2 = num2;
+                ViewBag.result = result;
+            }
+
+            if (command == "mul")
+            {
+                int result = num1 * num2;
+                ViewBag.num1 = num1;
+                ViewBag.num2 = num2;
+                ViewBag.result = result;
+            }
+
+            if (command == "sub")
+            {
+                int result = num1 - num2;
+                ViewBag.num1 = num1;
+                ViewBag.num2 = num2;
+                ViewBag.result = result;
+            }
+
+            if (command == "div")
+            {
+                int result = num1 / num2;
+                ViewBag.num1 = num1;
+                ViewBag.num2 = num2;
+                ViewBag.result = result;
+            }
+
+
+
             return View();
         }
     }
