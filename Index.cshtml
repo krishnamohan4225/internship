@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h5>using request object sending data from view to controller</h5>
+<form action="/Training1/postdata" method="post">
+    <input type="text" value="" name="myname" />
+    <input type="text" value="" name="mycity" />
+    <input type="submit" value="submit" name="submit" />
+</form>
+<hr />
+<h5>using form collection sending data from view to controller</h5>
+<form action="/Training1/postdata_formcollection" method="post">
+    <input type="text" value="" name="myname" />
+    <input type="text" value="" name="mycity" />
+    <input type="submit" value="submit" name="submit" />
+</form>
+@if(@ViewBag.myname !=null)
+{ 
+<h1>My name is :@ViewBag.myname </h1>
+<h1>My city is :@ViewBag.mycity </h1>
+}
