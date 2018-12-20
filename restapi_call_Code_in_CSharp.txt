@@ -1,0 +1,13 @@
+  public ActionResult Index()
+        {
+            WebRequest req = WebRequest.Create("https:.../ul/latest");
+            req.Method = "GET";
+            req.Headers["Authorization"] = "Basic " + "dmlub2RrdW1h==";
+            HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
+            var response = resp.GetResponseStream();
+            var reader = new StreamReader(response);
+            var responsestring = reader.ReadToEnd();
+            dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(responsestring);
+            var sensordata = data["dataFrame"];
+            return View();
+        }
