@@ -1,0 +1,29 @@
+<div class="dropdown">
+    <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+        Select Water Tank
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="@Url.Action("details", "home" ,new { deviceid="E8E1E1000101032F"})" target="_blank">Kadma Bottom</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010330"})" target="_blank">Kadma Top</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010331"})" target="_blank">Sonari Bottom</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010332"})" target="_blank">Sonari Top</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010335"})" target="_blank">Sakchi Bottom</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010336"})" target="_blank">Sakchi Top</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010337"})" target="_blank">Central Bottom</a></li>
+        <li><a href="@Url.Action("list", "Watertank" ,new { deviceid="E8E1E10001010338"})" target="_blank">Central Top</a></li>
+    </ul>
+</div>
+//controller
+
+         public ActionResult Charts()
+        {
+            return View();
+        }
+
+       
+        public ActionResult details(string deviceid)
+        {
+            string tankdeviceid = deviceid;
+            return View("Charts");
+        }
