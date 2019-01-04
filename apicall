@@ -1,0 +1,17 @@
+ public class APICall
+    {
+        public string GetData(string deviceid) {
+        string api = "https://data.iot.tatacommunications.com/rest/nodes/"+deviceid+"/payloads/ul";
+        //webrequest
+        WebRequest req = WebRequest.Create(api);
+        req.Method = "GET";
+        req.Headers["Authorization"] = "Basic dmlub2RrdW1hcjpQYXNzQDEyMw==";
+        //webresponse
+            HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
+            //strem reader
+            StreamReader reader = new StreamReader(resp.GetResponseStream());
+            string data = reader.ReadToEnd();
+          //  RootObject ro = new RootObject();
+          //  RootObject dataframe = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(data);
+            return data;
+    }
